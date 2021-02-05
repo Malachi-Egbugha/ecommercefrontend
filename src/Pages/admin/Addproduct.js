@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Layout from "../../component/Layout";
 import {isAuthenticated} from '../../auth';
 import {Link} from 'react-router-dom';
-import {createProduct, getCategories} from './apiAdmin';
+import {getCategories, creatProduct} from './apiAdmin';
 
 const AddProduct = () =>{
     
@@ -64,7 +64,7 @@ const AddProduct = () =>{
     const clickSubmit = (event) =>{
         event.preventDefault();
         setValues({...values, error:'', loading: true});
-        createProduct(user._id, token, formData)
+        creatProduct(user._id, token, formData)
         .then(data =>{
             if(data.error){
                 console.log(data.error);

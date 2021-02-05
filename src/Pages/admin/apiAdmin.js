@@ -21,7 +21,7 @@ export const createCategory = (userId, token, category) =>{
 
 };
 
-export const createProduct = (userId, token, product) =>{
+export const creatProduct = (userId, token, product) =>{
     console.log()
     
     return fetch(`${API}/product/create/${userId}`,{
