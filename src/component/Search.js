@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Layout from "../component/Layout";
 import Card from "../component/Card";
-import {getCategories} from "../Pages/apiCore"
+import {getCategories, list} from "../Pages/apiCore"
 const Search = () =>{
     const [data, setData] = useState({
         categories: [],
@@ -25,14 +25,32 @@ const Search = () =>{
         loadCategories()
 
     },[]);
-    const searchSubmit =()=>{
-        //
+    const searchData= () => {
+       // console.log(search, category);
+       if(search)
+       {
+           list({search: search || undefined, category: category})
+            .then(response =>{
+                if(response.error){
+                    console.log(response.error);
+                }else{
+                    
+                    setData({...data, results: response, searched: true})
+                }
+            })
+       }
+    }
+    const searchSubmit =(e)=>{
+
+        e.preventDefault();
+        searchData();
 
     };
-    const handleChange = () =>{
-        //
+    const handleChange = name => event =>{
+        setData({...data, [name]: event.target.value, searched: false });
+        
 
-    }
+    };
     const searchForm = () =>(
         <form onSubmit={searchSubmit}>
             <span className="input-group-text">
@@ -65,6 +83,7 @@ const Search = () =>{
         <div className="row">
             <div className="container mb-3">
                 {searchForm()}
+                {JSON.stringify(results)}
 
             </div>
             
