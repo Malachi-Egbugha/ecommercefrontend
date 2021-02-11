@@ -7,7 +7,7 @@ const Card= ({product}) => {
         <div className="col-4 mb-3">
             <div className="card">
                 <div className="card-header">
-                    {product.name}
+                    Author: {product.name}
                 </div>
                 <div className="card-body">
                     <ShowImage item={product} url="product"/>

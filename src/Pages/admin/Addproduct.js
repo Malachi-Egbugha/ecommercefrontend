@@ -93,7 +93,7 @@ const AddProduct = () =>{
             </div>
             <div className="form-group">
                 <label className="text-muted">
-                    Name
+                    Author's Name
                 </label>
                 <input onChange={handleChange('name')} type="text" className="form-control" value={name}/>
             </div>
