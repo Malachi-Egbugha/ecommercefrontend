@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import ShowImage from './ShowImage';
 
-const Card= ({product}) => {
+const authorsCard= ({product}) => {
     return(
         <div className="col-4 mb-3">
             <div className="card">
@@ -31,4 +31,4 @@ const Card= ({product}) => {
 
    
 }
-export default Card;
+export default authorsCard;

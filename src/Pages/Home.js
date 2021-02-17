@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Layout from "../component/Layout";
+import authorsCard from "../component/authorsCard";
 import Card from "../component/Card";
 import {getProducts} from "./apiCore";
 import Search from "../component/Search";
@@ -42,12 +43,14 @@ return(
        {productsByArrival.map((product, i)=> (<Card key={i} product={product}/>))}
 
         </div>
-        <h2 className="mb-4">Best Sellers</h2>
+        <h2 className="mb-4">Authors Ranking</h2>
         <div className="row">
         
        {productsBySell.map((product, i)=> (<Card key={i} product={product}/>))}
 
         </div>
+        
+        
        
       
        
